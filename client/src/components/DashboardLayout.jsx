@@ -2,15 +2,17 @@ import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 
-function Layout() {
+function DashboardLayout() {
     return (
-        <div className="h-[100vh] overflow-y-hidden">
+        <div>
             <Header />
-            <div className="max-w-7xl mx-auto bg-blue-50 flex gap-2 h-full">
+
+            <div className="max-w-7xl mx-auto bg-blue-50 flex h-[1200px]">
+                <Sidebar />
                 <Outlet />
             </div>
         </div>
     );
 }
 
-export default Layout;
+export default DashboardLayout;
