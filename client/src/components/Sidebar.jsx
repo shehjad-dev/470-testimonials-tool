@@ -7,7 +7,12 @@ const Sidebar = () => {
             <h3 className="text-xl font-medium text-indigo-950">Menu</h3>
             <nav className="flex flex-col gap-3 py-3">
                 <NavLink
-                    className="flex items-center gap-3 border-2 border-indigo-900 bg-transparent hover:bg-white rounded-xl py-2 px-4 text-indigo-900 transition-all duration-75 ease-out"
+                    /* className="flex items-center gap-3 border-2 border-indigo-900 bg-transparent hover:bg-white rounded-xl py-2 px-4 text-indigo-900 transition-all duration-75 ease-out" */
+                    className={({ isActive, isPending }) =>
+                        isActive
+                            ? "flex items-center gap-3 border-2 border-indigo-900 bg-white hover:bg-white rounded-xl py-2 px-4 text-indigo-900 transition-all duration-75 ease-out"
+                            : "flex items-center gap-3 border-2 border-indigo-900 bg-transparent hover:bg-white rounded-xl py-2 px-4 text-indigo-900 transition-all duration-75 ease-out"
+                    }
                     to={"/dashboard"}
                 >
                     <span>
@@ -29,8 +34,13 @@ const Sidebar = () => {
                     <span>Dashboard</span>
                 </NavLink>
                 <NavLink
-                    className={`flex items-center gap-3 border-2 border-indigo-900 hover:bg-white rounded-xl py-2 px-4 text-indigo-900 transition-all duration-75 ease-out`}
-                    to={"/dashboard/forms"}
+                    /* className={`flex items-center gap-3 border-2 border-indigo-900 hover:bg-white rounded-xl py-2 px-4 text-indigo-900 transition-all duration-75 ease-out`} */
+                    className={({ isActive, isPending }) =>
+                        isActive
+                            ? "flex items-center gap-3 border-2 border-indigo-900 bg-white hover:bg-white rounded-xl py-2 px-4 text-indigo-900 transition-all duration-75 ease-out"
+                            : "flex items-center gap-3 border-2 border-indigo-900 bg-transparent hover:bg-white rounded-xl py-2 px-4 text-indigo-900 transition-all duration-75 ease-out"
+                    }
+                    to={"/forms"}
                 >
                     <span>
                         <svg

@@ -9,6 +9,8 @@ import NoMatch from "./components/NoMatch";
 import MyForms from "./components/MyForms";
 import { PrivateRoutes } from "./utils/PrivateRoutes";
 import Dashboard from "./components/Dashboard";
+import AddNew from "./components/AddNew";
+import EditForm from "./components/EditForm";
 
 const publishableKey = import.meta.env
     .VITE_SOME_REACT_APP_CLERK_PUBLISHABLE_KEY;
@@ -22,7 +24,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 </Route>
                 <Route element={<PrivateRoutes />}>
                     <Route path="/dashboard" element={<Dashboard />} />
-                    <Route path="/dashboard/forms" element={<MyForms />} />
+                    <Route path="/forms" element={<MyForms />} />
+                    <Route path="/forms/new" element={<AddNew />} />
+                    <Route
+                        exact
+                        path="/forms/:id/edit"
+                        element={<EditForm />}
+                    />
                 </Route>
                 {/* <Route path="/" element={<Layout />}>
                     <Route index element={<App />} />
