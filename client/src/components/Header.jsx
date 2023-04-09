@@ -5,6 +5,8 @@ import {
     useClerk,
     useUser,
 } from "@clerk/clerk-react";
+import { Link } from "react-router-dom";
+
 /* import "../styles/Header.css"; */
 
 function SignUpButton() {
@@ -57,11 +59,13 @@ function Header() {
                 {/* <SignedIn>
                     <div>This content is visible only to signed in users.</div>
                 </SignedIn> */}
-                <SignedIn>
-                    <div className="w-9 h-9 rounded-full border-2 border-indigo-900 flex items-center justify-center">
-                        <UserButton />
-                    </div>
-                </SignedIn>
+                <div className="flex gap-x-4">
+                    <SignedIn>
+                        <div className="w-9 h-9 rounded-full border-2 border-indigo-900 flex items-center justify-center">
+                            <UserButton />
+                        </div>
+                    </SignedIn>
+                </div>
             </nav>
         </header>
     );
