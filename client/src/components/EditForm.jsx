@@ -14,7 +14,7 @@ const EditForm = () => {
         title: "",
         rating: true,
         testimonial: true,
-        status: "Show",
+        status: "Active",
     });
 
     useEffect(() => {
@@ -52,7 +52,7 @@ const EditForm = () => {
         } else {
             setFormData({
                 ...formData,
-                status: e.target.value === "Active" ? "Show" : "Hidden",
+                status: e.target.value === "Active" ? "Active" : "Disable",
             });
         }
     };
@@ -87,8 +87,8 @@ const EditForm = () => {
     return (
         <div className="p-4 overflow-hidden bg-blue-50 shadow-cardShadow rounded-md w-full">
             <h4
-                className="mb-8 text-xl font-bold text-center"
-                onClick={() => console.log(formToEdit)}
+                className="mb-8 text-xl font-bold text-center w-[600px]"
+                /* onClick={() => console.log(formData)} */
             >
                 Edit Form
             </h4>
@@ -150,8 +150,8 @@ const EditForm = () => {
                             value={formData.status}
                             onChange={handleFormDataChange}
                         >
-                            <option value={"Active"}>Show</option>
-                            <option value="Hidden">Hidden</option>
+                            <option value="Active">Active</option>
+                            <option value="Disable">Disable</option>
                         </select>
                     </div>
 

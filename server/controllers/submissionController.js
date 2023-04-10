@@ -22,6 +22,16 @@ const getMySubmissions = asyncHandler(async (req, res) => {
     res.status(200).json(submissions);
 });
 
+const getMyActiveSubmissions = asyncHandler(async (req, res) => {
+    //const forms = await Form.find();
+    //console.log(req.params.id);
+    const submissions = await Submission.find({
+        formId: req.params.formid,
+        show: true,
+    });
+    res.status(200).json(submissions);
+});
+
 // @desc Get form
 // @route GET /api/forms/:id
 // @access Private
@@ -93,6 +103,7 @@ const updateStatus = asyncHandler(async (req, res) => {
 module.exports = {
     getSubmissions,
     getMySubmissions,
+    getMyActiveSubmissions,
     updateStatus,
     setSubmission,
 };

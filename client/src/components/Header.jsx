@@ -37,7 +37,7 @@ function SignInButton() {
 
 function Header() {
     const user = useUser();
-    console.log(user);
+    /* console.log(user); */
     return (
         <header className="max-w-7xl bg-blue-100 mx-auto px-5 sticky top-0 shadow-sm z-50">
             <nav className="flex justify-between items-center py-3">
@@ -59,13 +59,11 @@ function Header() {
                 {/* <SignedIn>
                     <div>This content is visible only to signed in users.</div>
                 </SignedIn> */}
-                <div className="flex gap-x-4">
-                    <SignedIn>
-                        <div className="w-9 h-9 rounded-full border-2 border-indigo-900 flex items-center justify-center">
-                            <UserButton />
-                        </div>
-                    </SignedIn>
-                </div>
+                <SignedIn>
+                    <div className="w-9 h-9 rounded-full border-2 border-indigo-900 flex items-center justify-center">
+                        <UserButton />
+                    </div>
+                </SignedIn>
             </nav>
         </header>
     );

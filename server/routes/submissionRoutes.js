@@ -3,6 +3,7 @@ const router = express.Router();
 const {
     getSubmissions,
     getMySubmissions,
+    getMyActiveSubmissions,
     updateStatus,
     setSubmission,
 } = require("../controllers/submissionController");
@@ -10,6 +11,8 @@ const {
 router.get("/", getSubmissions);
 
 router.get("/mysubmission/:formid", getMySubmissions);
+
+router.get("/myactivesubmission/:formid", getMyActiveSubmissions);
 
 //router.get("/:id", getForm);
 
