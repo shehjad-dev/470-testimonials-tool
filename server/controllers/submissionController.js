@@ -32,20 +32,6 @@ const getMyActiveSubmissions = asyncHandler(async (req, res) => {
     res.status(200).json(submissions);
 });
 
-// @desc Get form
-// @route GET /api/forms/:id
-// @access Private
-/* const getForm = asyncHandler(async (req, res) => {
-    const form = await Form.findById(req.params.id);
-
-    if (!form) {
-        res.status(400);
-        throw new Error("Form Not Found");
-    }
-
-    res.status(200).json(form);
-}); */
-
 // @desc Set form
 // @route POST /api/forms
 // @access Private
@@ -83,22 +69,6 @@ const updateStatus = asyncHandler(async (req, res) => {
     //res.status(200).json(updatedForm);
     res.status(200).json(updatedSubmission);
 });
-
-// @desc Delete froms
-// @route DELETE /api/forms/:id
-// @access Private
-/* const deleteForm = asyncHandler(async (req, res) => {
-    const form = await Form.findById(req.params.id);
-
-    if (!form) {
-        res.status(400);
-        throw new Error("Form Not Found");
-    }
-
-    await form.remove();
-
-    res.status(200).json({ id: req.params.id });
-}); */
 
 module.exports = {
     getSubmissions,

@@ -29,32 +29,4 @@ const formSchema = mongoose.Schema(
     }
 );
 
-/* const formSchema2 = mongoose.Schema(
-    {
-        rating: {
-            type: Boolean,
-            required: [true, "Please add rating option"],
-        },
-        testimonial: {
-            type: Boolean,
-            required: [true, "Please add testimonials option"],
-        },
-        userName: {
-            type: String,
-            required: [true, "Please add name option"],
-        },
-        userAvatar: {
-            type: String,
-            required: [true, "Please add name userAvatar"],
-        },
-        servicesName: {
-            type: String,
-            required: [true, "Please add name services title"],
-        }
-    },
-    {
-        timestamps: true,
-    }
-); */
-
 module.exports = mongoose.model("Form", formSchema);
