@@ -3,7 +3,7 @@ import { useUser } from "@clerk/clerk-react";
 import axios from "axios";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 
-const AddNew = () => {
+const AddNew = (testUserData) => {
     const userInfo = useUser();
     const navigate = useNavigate();
 
@@ -45,7 +45,7 @@ const AddNew = () => {
                 `http://localhost:5000/api/forms`,
                 {
                     ...formData,
-                    userId: userInfo.user.id,
+                    userId: testUserData ? testUserData.id : userInfo.user.id,
                 }
             );
 

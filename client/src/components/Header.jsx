@@ -22,12 +22,13 @@ function SignUpButton() {
     );
 }
 
-function SignInButton() {
+export function SignInButton() {
     const clerk = useClerk();
 
     return (
         <button
             className="sign-in-btn bg-indigo-900 text-white py-2 px-4 rounded-xl font-medium"
+            data-testid="signInBtn"
             onClick={() => clerk.openSignIn({})}
         >
             Sign in
